@@ -7,6 +7,8 @@ require "test/unit"
 class CustomerTest < Test::Unit::TestCase
   def setup
     Customer.delete_all
+    Product.delete_all
+    Transaction.delete_all
   end
 
   def test_customer_all_should_return_zero_when_there_is_no_customers
@@ -47,4 +49,20 @@ class CustomerTest < Test::Unit::TestCase
 
     assert_equal(1, Transaction.all.count)
   end
+
+  def test_purchases
+    lego = Product.new(title: "LEGO Iron Man vs. Ultron", price: 22.99, stock: 55)
+    nanoblock = Product.new(title: "Nano Block Empire State Building", price: 49.99, stock: 12)
+    firehouse = Product.new(title: "LEGO Firehouse Headquarter", price: 199.99, stock: 10)
+    walter = Customer.new(name: "Walter Latimer")
+
+    walter.purchase(lego)
+    walter.purchase(nanoblock)
+    walter.purchase(firehouse)
+
+    assert_true(walter.purchases.include? lego)
+    assert_true(walter.purchases.include? nanoblock)
+    assert_true(walter.purchases.include? firehouse)
+  end
+
 end
