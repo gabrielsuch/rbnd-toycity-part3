@@ -64,5 +64,4 @@ class CustomerTest < Test::Unit::TestCase
     assert_true(walter.purchases.include? nanoblock)
     assert_true(walter.purchases.include? firehouse)
   end
-
 end

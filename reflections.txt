@@ -1,0 +1,13 @@
+How long did you spend working on this project? 
+~2 hours
+
+What was the most rewarding challenge you conquered? 
+Looks like everything is working :)
+
+What two additional features did you build? Why?
+1) A way for customer return the products they bought (customer purchases)
+2) A better way to return transactions (Transaction.find_by_customer)
+Extra bonus: Unit tests for all the code
+
+Where do you still have room to grow?
+Code style probably, I am not sure if my code looks like a "good ruby code"

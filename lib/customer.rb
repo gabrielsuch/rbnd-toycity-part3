@@ -32,5 +32,4 @@ class Customer
   def purchases
     Transaction.find_by_customer(self).collect { |t| t.product }
   end
-
 end

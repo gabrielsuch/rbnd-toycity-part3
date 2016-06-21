@@ -55,5 +55,4 @@ class TransactionTest < Test::Unit::TestCase
 
     assert_equal(1, Transaction.find(1).id)
   end
-
 end
