@@ -26,6 +26,10 @@ class Product
     @@products.select {|product| product.in_stock?}
   end
 
+  def sell
+    @stock -= 1
+  end
+
   def in_stock?
     stock > 0
   end

@@ -1,4 +1,6 @@
 require_relative "../lib/customer"
+require_relative "../lib/product"
+require_relative "../lib/transaction"
 require_relative "../lib/errors"
 require "test/unit"
 
@@ -34,5 +36,15 @@ class CustomerTest < Test::Unit::TestCase
     Customer.new(name: "Walter Latimer")
     walter = Customer.find_by_name("Walter Latimer")
     assert_equal("Walter Latimer", walter.name)
+  end
+
+  def test_purchase
+    assert_equal(0, Transaction.all.count)
+
+    walter = Customer.new(name: "Walter Latimer")
+    nanoblock = Product.new(title: "Nano Block Empire State Building", price: 49.99, stock: 12)
+    walter.purchase(nanoblock)
+
+    assert_equal(1, Transaction.all.count)
   end
 end

@@ -25,4 +25,8 @@ class Customer
     @@customers << self
   end
 
+  def purchase(product)
+    Transaction.new(self, product)
+  end
+
 end
