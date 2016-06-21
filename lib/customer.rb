@@ -17,7 +17,7 @@ class Customer
   end
 
   def self.find_by_name(search)
-    @@customers.select {|customer| customer.name == search}.first
+    @@customers.find { |customer| customer.name == search }
   end
 
   def add_to_customers

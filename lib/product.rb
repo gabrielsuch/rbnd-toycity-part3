@@ -19,11 +19,11 @@ class Product
   end
 
   def self.find_by_title(search)
-    @@products.select {|product| product.title == search}.first
+    @@products.find { |product| product.title == search }
   end
 
   def self.in_stock
-    @@products.select {|product| product.in_stock?}
+    @@products.select { |product| product.in_stock? }
   end
 
   def sell

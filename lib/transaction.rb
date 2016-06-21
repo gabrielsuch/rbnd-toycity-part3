@@ -21,7 +21,7 @@ class Transaction
   end
 
   def self.find(search)
-    @@transactions.select { |transaction| transaction.id == search }.first
+    @@transactions.find { |transaction| transaction.id == search }
   end
 
   def self.find_by_customer(search)
