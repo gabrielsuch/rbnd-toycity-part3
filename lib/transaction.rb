@@ -1,7 +1,7 @@
 class Transaction
   attr_reader :id, :customer, :product
 
-  @@next_id = 0;
+  @@next_id = 0
   @@transactions = []
 
   def initialize(customer, product)
